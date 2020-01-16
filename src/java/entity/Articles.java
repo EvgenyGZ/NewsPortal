@@ -16,13 +16,13 @@ import javax.persistence.TemporalType;
 @Entity
 public class Articles implements Serializable {
 
-//    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
    
 
-    private String Title ;
+    private String title ;
     @OneToOne
     private Category category; // 1. сущности, как таблицы 2. просто имя переменной
     
@@ -31,15 +31,15 @@ public class Articles implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastEditDate;
     @OneToOne
-    private  Author author;
+    private  Users author;
     private String newsContent;
 
     
      public Articles() {
     }
 
-     public Articles(String Title, Category category, Date createDate, Date lastEditDate, Author author, String newsContent) {
-        this.Title = Title;
+     public Articles(String Title, Category category, Date createDate, Date lastEditDate, Users author, String newsContent) {
+        this.title = Title;
         this.category = category;
         this.createDate = createDate;
         this.lastEditDate = lastEditDate;
@@ -56,11 +56,11 @@ public class Articles implements Serializable {
     }
 
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public void setTitle(String Title) {
-        this.Title = Title;
+        this.title = Title;
     }
 
     public Category getCategory() {
@@ -87,11 +87,11 @@ public class Articles implements Serializable {
         this.lastEditDate = lastEditDate;
     }
 
-    public Author getAuthor() {
+    public Users getAuthor() {
         return author;
     }
 
-    public void setAuthor(Author author) {
+    public void setAuthor(Users author) {
         this.author = author;
     }
 
@@ -107,7 +107,7 @@ public class Articles implements Serializable {
     public int hashCode() {
         int hash = 7;
         hash = 67 * hash + Objects.hashCode(this.id);
-        hash = 67 * hash + Objects.hashCode(this.Title);
+        hash = 67 * hash + Objects.hashCode(this.title);
         hash = 67 * hash + Objects.hashCode(this.category);
         hash = 67 * hash + Objects.hashCode(this.createDate);
         hash = 67 * hash + Objects.hashCode(this.lastEditDate);
@@ -128,7 +128,7 @@ public class Articles implements Serializable {
             return false;
         }
         final Articles other = (Articles) obj;
-        if (!Objects.equals(this.Title, other.Title)) {
+        if (!Objects.equals(this.title, other.title)) {
             return false;
         }
         if (!Objects.equals(this.newsContent, other.newsContent)) {
@@ -156,11 +156,11 @@ public class Articles implements Serializable {
     public String toString() {
         return "Articles{" 
                 + "id=" + id 
-                + ", Title=" + Title 
-                + ", category=" + category.get 
+                + ", Title=" + title 
+                + ", category=" + category.getCategory()
                 + ", createDate=" + createDate 
                 + ", lastEditDate=" + lastEditDate 
-                + ", author=" + author.get 
+                + ", author=" + author.getNickName()
                 + ", newsContent=" + newsContent 
                 + '}';
     }
