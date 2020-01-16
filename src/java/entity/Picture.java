@@ -17,7 +17,7 @@ public class Picture implements Serializable {
     private Long id;
 
     @OneToOne
-    private Long NewsID; // проверить???!!!
+    private Articles articles; // проверить???!!!
     private String picTitle;
     @OneToOne
     private  Users author;
@@ -25,8 +25,8 @@ public class Picture implements Serializable {
     public Picture() {
     }
 
-    public Picture(Long NewsID, String picTitle, Users author) {
-        this.NewsID = NewsID;
+    public Picture(Articles articles, String picTitle, Users author) {
+        this.articles = articles;
         this.picTitle = picTitle;
         this.author = author;
     }
@@ -39,12 +39,12 @@ public class Picture implements Serializable {
         this.id = id;
     }
 
-    public Long getNewsID() {
-        return NewsID;
+    public Articles getArticles() {
+        return articles;
     }
 
-    public void setNewsID(Long NewsID) {
-        this.NewsID = NewsID;
+    public void setArticles(Articles articles) {
+        this.articles = articles;
     }
 
     public String getPicTitle() {
@@ -66,10 +66,10 @@ public class Picture implements Serializable {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 59 * hash + Objects.hashCode(this.id);
-        hash = 59 * hash + Objects.hashCode(this.NewsID);
-        hash = 59 * hash + Objects.hashCode(this.picTitle);
-        hash = 59 * hash + Objects.hashCode(this.author);
+        hash = 53 * hash + Objects.hashCode(this.id);
+        hash = 53 * hash + Objects.hashCode(this.articles);
+        hash = 53 * hash + Objects.hashCode(this.picTitle);
+        hash = 53 * hash + Objects.hashCode(this.author);
         return hash;
     }
 
@@ -91,7 +91,7 @@ public class Picture implements Serializable {
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
-        if (!Objects.equals(this.NewsID, other.NewsID)) {
+        if (!Objects.equals(this.articles, other.articles)) {
             return false;
         }
         if (!Objects.equals(this.author, other.author)) {
@@ -104,13 +104,11 @@ public class Picture implements Serializable {
     public String toString() {
         return "Picture{" 
                 + "id=" + id 
-                + ", NewsID=" + NewsID 
+                + ", articles=" + articles 
                 + ", picTitle=" + picTitle 
                 + ", author=" + author.getNickName()
                 + '}';
     }
-    
 
-    
     
 }
