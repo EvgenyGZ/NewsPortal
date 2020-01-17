@@ -5,14 +5,16 @@
 
 
 <%--<f:view>--%>
-    <html>
+<!--    <html>
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
             <title>JSP Page</title>
         </head>
-        <body>
+        <body>-->
             <h1>NewsPortal</h1>
-            <h2>16.01.2020 v.2</h2>
-        </body>
-    </html>
+            <h2>16.01.2020 v.2.1</h2>
+            
+            <a href="showLogin" >Зарегистрироваться</a>
+<!--        </body>
+    </html>-->
 <%--</f:view>--%>

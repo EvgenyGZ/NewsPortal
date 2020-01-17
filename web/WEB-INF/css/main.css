@@ -1,0 +1,61 @@
+#show-book-wrap textarea{
+    width: 100%;
+    box-sizing: border-box;
+}
+#info{
+    width: 100%;
+    text-align: center;
+    height: 40px;
+    position: relative;
+    margin-top: 50px; 
+}
+.title-bg{
+  background-color: #2B3E50;
+}
+.indexBookDataImg{
+  height: 160px;
+  width: 140px;
+}
+.bookDataImg{
+  height: 360px;
+  width: 240px;
+}
+.footer{
+  text-align: center;
+  height: 55px;
+  color: white;
+}
+.card-inline{
+  width: 200px ;
+  height: auto;
+}
+.height-row{
+/*  display: flex;
+  flex-flow: column nowrap;
+  width: 100vw;
+  height: 100vh;*/
+}
+.profileWrap{
+     margin: 0 auto;
+     width: 30vw;
+}
+.profileWrap input{
+    width: 30vw;
+}
+.loginWrap{
+  display: flex;
+  margin: 0 auto;
+  flex-flow: column nowrap;
+  width: 30vw;
+  height: 100vh;
+}
+.edit-comment-btn,
+.change-comment-btn{
+  width: 10rem;
+}
+.change-comment-btn{
+    display: none;
+}
+.container-fluid{
+    margin-top: 50px;
+}
