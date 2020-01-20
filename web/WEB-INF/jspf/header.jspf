@@ -21,9 +21,12 @@
 
           <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
+                
+                <!--Кнопка меню на навбаре-->
+<!--              <li class="nav-item">
               <a class="nav-link" href="showListAllBooks">Книги</a>
-              </li>
+              </li>-->
+
               <c:if test="${'ADMIN' eq userRole || 'MANAGER' eq userRole}">
                 <li class="nav-item">
                   <a class="nav-link" href="newBook">Новая книга</a>
@@ -48,6 +51,11 @@
               <c:if test="${null == user}">
                 <li class="nav-item">
                   <a class="nav-link" href="showLogin">Войти</a>
+                </li>
+              </c:if>
+                <c:if test="${null == user}">
+                <li class="nav-item">
+                  <a class="nav-link" href="showRegistration">Зарегистрироваться</a>
                 </li>
               </c:if>
               <c:if test="${null != user}">

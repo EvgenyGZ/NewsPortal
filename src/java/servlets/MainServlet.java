@@ -1,5 +1,6 @@
 package servlets;
 
+import entity.Users;
 import java.io.IOException;
 import javax.ejb.EJB;
 
@@ -13,7 +14,10 @@ import session.UsersFacade;
 
 @WebServlet(name = "AdminController", loadOnStartup = 1, urlPatterns = {
     "/index",
-    "/showLogin",})
+    "/showLogin",
+    "/showRegistration",
+    "/registration",
+})
 
 public class MainServlet extends HttpServlet {
 
@@ -36,6 +40,49 @@ public class MainServlet extends HttpServlet {
 
             case "/showLogin":
                 request.getRequestDispatcher("/WEB-INF/showLogin.jsp").forward(request, response);
+                break;
+                
+            case "/showRegistration":
+                request.getRequestDispatcher("/WEB-INF/showRegistration.jsp").forward(request, response);
+                break;
+            case "/registration":
+            String firstname = request.getParameter("firstname");
+            String lastname = request.getParameter("lastname");
+            String nickname = request.getParameter("nickname");
+            String email = request.getParameter("email");
+            String password = request.getParameter("password");
+            String password2 = request.getParameter("password2");
+            
+            //Проверка двух введенных паролей на идентичность
+            if(!password.equals(password2)){
+                    request.setAttribute("info", "Несовпадают пароли");
+                    request.getRequestDispatcher("/showRegistration")
+                        .forward(request, response);
+                    break;
+                }
+            
+            request.setAttribute("firstname", firstname); // оставит данные в форме после обновления из-за ошибки
+            // написать для всех полей  
+            
+            // создаю новую запись в бд
+             
+            if (null == firstname || "".equals(firstname) || null == password || "".equals(password) ) // перебираем все поля
+            {
+                 request.setAttribute("info", "Заполните все поля");
+                 request.getRequestDispatcher("/showRegistration").forward(request, response);
+                 break;
+            }
+            
+
+            Users user = new Users (email,firstname,lastname,nickname,password, null, null);
+            usersFacade.create(user);
+            // оставим место для шифрования пароля
+            
+            request.setAttribute("info", "Пользователь "+user.getFirstName()+" "+user.getLastName()+" добавлен");
+             request.getRequestDispatcher("/index").forward(request, response);
+            
+            
+           
                 break;
         }
     }
