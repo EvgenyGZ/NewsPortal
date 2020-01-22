@@ -31,15 +31,14 @@ public class Articles implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastEditDate;
     @OneToOne
-    private  Users author;
+    private  Person author;
     private String newsContent;
 
-    
-     public Articles() {
+    public Articles() {
     }
 
-     public Articles(String Title, Category category, Date createDate, Date lastEditDate, Users author, String newsContent) {
-        this.title = Title;
+    public Articles(String title, Category category, Date createDate, Date lastEditDate, Person author, String newsContent) {
+        this.title = title;
         this.category = category;
         this.createDate = createDate;
         this.lastEditDate = lastEditDate;
@@ -59,8 +58,8 @@ public class Articles implements Serializable {
         return title;
     }
 
-    public void setTitle(String Title) {
-        this.title = Title;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Category getCategory() {
@@ -87,11 +86,11 @@ public class Articles implements Serializable {
         this.lastEditDate = lastEditDate;
     }
 
-    public Users getAuthor() {
+    public Person getAuthor() {
         return author;
     }
 
-    public void setAuthor(Users author) {
+    public void setAuthor(Person author) {
         this.author = author;
     }
 
@@ -105,14 +104,14 @@ public class Articles implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.id);
-        hash = 67 * hash + Objects.hashCode(this.title);
-        hash = 67 * hash + Objects.hashCode(this.category);
-        hash = 67 * hash + Objects.hashCode(this.createDate);
-        hash = 67 * hash + Objects.hashCode(this.lastEditDate);
-        hash = 67 * hash + Objects.hashCode(this.author);
-        hash = 67 * hash + Objects.hashCode(this.newsContent);
+        int hash = 5;
+        hash = 53 * hash + Objects.hashCode(this.id);
+        hash = 53 * hash + Objects.hashCode(this.title);
+        hash = 53 * hash + Objects.hashCode(this.category);
+        hash = 53 * hash + Objects.hashCode(this.createDate);
+        hash = 53 * hash + Objects.hashCode(this.lastEditDate);
+        hash = 53 * hash + Objects.hashCode(this.author);
+        hash = 53 * hash + Objects.hashCode(this.newsContent);
         return hash;
     }
 
@@ -154,22 +153,11 @@ public class Articles implements Serializable {
 
     @Override
     public String toString() {
-        return "Articles{" 
-                + "id=" + id 
-                + ", Title=" + title 
-                + ", category=" + category.getCategory()
-                + ", createDate=" + createDate 
-                + ", lastEditDate=" + lastEditDate 
-                + ", author=" + author.getNickName()
-                + ", newsContent=" + newsContent 
-                + '}';
+        return "Articles{" + "id=" + id + ", title=" + title + ", category=" + category + ", createDate=" + createDate + ", lastEditDate=" + lastEditDate + ", author=" + author + ", newsContent=" + newsContent + '}';
     }
 
-     
-     
-     
-     
-     
+    
+    
     
 
 }

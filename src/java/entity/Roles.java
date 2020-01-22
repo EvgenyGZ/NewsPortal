@@ -18,7 +18,7 @@ import javax.persistence.Id;
  * @author pupil
  */
 @Entity
-public class Role implements Serializable {
+public class Roles implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -27,10 +27,10 @@ public class Role implements Serializable {
     @Column(unique = true)
     private String role;
 
-    public Role() {
+    public Roles() {
     }
 
-    public Role(String role) {
+    public Roles(String role) {
         this.role = role;
     }
 
@@ -53,8 +53,8 @@ public class Role implements Serializable {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 59 * hash + Objects.hashCode(this.id);
-        hash = 59 * hash + Objects.hashCode(this.role);
+        hash = 71 * hash + Objects.hashCode(this.id);
+        hash = 71 * hash + Objects.hashCode(this.role);
         return hash;
     }
 
@@ -69,7 +69,7 @@ public class Role implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Role other = (Role) obj;
+        final Roles other = (Roles) obj;
         if (!Objects.equals(this.role, other.role)) {
             return false;
         }
@@ -83,7 +83,7 @@ public class Role implements Serializable {
     public String toString() {
         return "Roles{" + "id=" + id + ", role=" + role + '}';
     }
-    
+
     
     
 }

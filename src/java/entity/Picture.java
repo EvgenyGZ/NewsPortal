@@ -20,15 +20,15 @@ public class Picture implements Serializable {
     private Articles articles; // проверить???!!!
     private String picTitle;
     @OneToOne
-    private  Users author;
+    private  Person person;
 
     public Picture() {
     }
 
-    public Picture(Articles articles, String picTitle, Users author) {
+    public Picture(Articles articles, String picTitle, Person person) {
         this.articles = articles;
         this.picTitle = picTitle;
-        this.author = author;
+        this.person = person;
     }
 
     public Long getId() {
@@ -55,21 +55,21 @@ public class Picture implements Serializable {
         this.picTitle = picTitle;
     }
 
-    public Users getAuthor() {
-        return author;
+    public Person getPerson() {
+        return person;
     }
 
-    public void setAuthor(Users author) {
-        this.author = author;
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 53 * hash + Objects.hashCode(this.id);
-        hash = 53 * hash + Objects.hashCode(this.articles);
-        hash = 53 * hash + Objects.hashCode(this.picTitle);
-        hash = 53 * hash + Objects.hashCode(this.author);
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.id);
+        hash = 97 * hash + Objects.hashCode(this.articles);
+        hash = 97 * hash + Objects.hashCode(this.picTitle);
+        hash = 97 * hash + Objects.hashCode(this.person);
         return hash;
     }
 
@@ -94,7 +94,7 @@ public class Picture implements Serializable {
         if (!Objects.equals(this.articles, other.articles)) {
             return false;
         }
-        if (!Objects.equals(this.author, other.author)) {
+        if (!Objects.equals(this.person, other.person)) {
             return false;
         }
         return true;
@@ -102,13 +102,8 @@ public class Picture implements Serializable {
 
     @Override
     public String toString() {
-        return "Picture{" 
-                + "id=" + id 
-                + ", articles=" + articles 
-                + ", picTitle=" + picTitle 
-                + ", author=" + author.getNickName()
-                + '}';
+        return "Picture{" + "id=" + id + ", articles=" + articles + ", picTitle=" + picTitle + ", person=" + person + '}';
     }
 
-    
+   
 }

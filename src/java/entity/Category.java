@@ -23,7 +23,6 @@ public class Category implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String Category;
 
     public Category() {
@@ -51,9 +50,9 @@ public class Category implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.id);
-        hash = 53 * hash + Objects.hashCode(this.Category);
+        int hash = 5;
+        hash = 29 * hash + Objects.hashCode(this.id);
+        hash = 29 * hash + Objects.hashCode(this.Category);
         return hash;
     }
 
@@ -77,6 +76,12 @@ public class Category implements Serializable {
         }
         return true;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Category{" + "id=" + id + ", Category=" + Category + '}';
+    }
+
+   
     
 }

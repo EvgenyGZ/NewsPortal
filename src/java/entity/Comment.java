@@ -36,17 +36,17 @@ public class Comment implements Serializable {
     private Date lastEditDate;
 
     @OneToOne
-    private Users author;
+    private Person person;
     private String CommentText;
 
     public Comment() {
     }
 
-    public Comment(Articles articles, Date createDatel, Date lastEditDate, Users author, String CommentText) {
+    public Comment(Articles articles, Date createDatel, Date lastEditDate, Person person, String CommentText) {
         this.articles = articles;
         this.createDatel = createDatel;
         this.lastEditDate = lastEditDate;
-        this.author = author;
+        this.person = person;
         this.CommentText = CommentText;
     }
 
@@ -82,12 +82,12 @@ public class Comment implements Serializable {
         this.lastEditDate = lastEditDate;
     }
 
-    public Users getAuthor() {
-        return author;
+    public Person getPerson() {
+        return person;
     }
 
-    public void setAuthor(Users author) {
-        this.author = author;
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     public String getCommentText() {
@@ -100,13 +100,13 @@ public class Comment implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 23 * hash + Objects.hashCode(this.id);
-        hash = 23 * hash + Objects.hashCode(this.articles);
-        hash = 23 * hash + Objects.hashCode(this.createDatel);
-        hash = 23 * hash + Objects.hashCode(this.lastEditDate);
-        hash = 23 * hash + Objects.hashCode(this.author);
-        hash = 23 * hash + Objects.hashCode(this.CommentText);
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.id);
+        hash = 59 * hash + Objects.hashCode(this.articles);
+        hash = 59 * hash + Objects.hashCode(this.createDatel);
+        hash = 59 * hash + Objects.hashCode(this.lastEditDate);
+        hash = 59 * hash + Objects.hashCode(this.person);
+        hash = 59 * hash + Objects.hashCode(this.CommentText);
         return hash;
     }
 
@@ -137,7 +137,7 @@ public class Comment implements Serializable {
         if (!Objects.equals(this.lastEditDate, other.lastEditDate)) {
             return false;
         }
-        if (!Objects.equals(this.author, other.author)) {
+        if (!Objects.equals(this.person, other.person)) {
             return false;
         }
         return true;
@@ -145,15 +145,9 @@ public class Comment implements Serializable {
 
     @Override
     public String toString() {
-        return "Comment{" 
-                + "id=" + id 
-                + ", articles=" + articles 
-                + ", createDatel=" + createDatel 
-                + ", lastEditDate=" + lastEditDate 
-                + ", author=" + author.getNickName()
-                + ", CommentText=" + CommentText 
-                + '}';
+        return "Comment{" + "id=" + id + ", articles=" + articles + ", createDatel=" + createDatel + ", lastEditDate=" + lastEditDate + ", person=" + person + ", CommentText=" + CommentText + '}';
     }
 
+    
     
 }

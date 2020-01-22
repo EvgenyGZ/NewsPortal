@@ -18,31 +18,24 @@ import javax.persistence.OneToOne;
  * @author pupil
  */
 @Entity
-public class Users implements Serializable {
+public class Person implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
     private String lastName;
     private String nickName;
-    private String email;
-    private String password;
-    @OneToOne
-    private Role role; // 
     private String picUser;
 
-    public Users() {
+    public Person() {
     }
 
-    public Users(String firstName, String lastName, String nickName, String email, String password, Role role, String picUser) {
+    public Person(String firstName, String lastName, String nickName, String picUser) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.nickName = nickName;
-        this.email = email;
-        this.password = password;
-        this.role = role;
         this.picUser = picUser;
     }
 
@@ -78,30 +71,6 @@ public class Users implements Serializable {
         this.nickName = nickName;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
     public String getPicUser() {
         return picUser;
     }
@@ -112,15 +81,12 @@ public class Users implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.id);
-        hash = 53 * hash + Objects.hashCode(this.firstName);
-        hash = 53 * hash + Objects.hashCode(this.lastName);
-        hash = 53 * hash + Objects.hashCode(this.nickName);
-        hash = 53 * hash + Objects.hashCode(this.email);
-        hash = 53 * hash + Objects.hashCode(this.password);
-        hash = 53 * hash + Objects.hashCode(this.role);
-        hash = 53 * hash + Objects.hashCode(this.picUser);
+        int hash = 3;
+        hash = 59 * hash + Objects.hashCode(this.id);
+        hash = 59 * hash + Objects.hashCode(this.firstName);
+        hash = 59 * hash + Objects.hashCode(this.lastName);
+        hash = 59 * hash + Objects.hashCode(this.nickName);
+        hash = 59 * hash + Objects.hashCode(this.picUser);
         return hash;
     }
 
@@ -135,7 +101,7 @@ public class Users implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Users other = (Users) obj;
+        final Person other = (Person) obj;
         if (!Objects.equals(this.firstName, other.firstName)) {
             return false;
         }
@@ -145,19 +111,10 @@ public class Users implements Serializable {
         if (!Objects.equals(this.nickName, other.nickName)) {
             return false;
         }
-        if (!Objects.equals(this.email, other.email)) {
-            return false;
-        }
-        if (!Objects.equals(this.password, other.password)) {
-            return false;
-        }
         if (!Objects.equals(this.picUser, other.picUser)) {
             return false;
         }
         if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        if (!Objects.equals(this.role, other.role)) {
             return false;
         }
         return true;
@@ -165,20 +122,9 @@ public class Users implements Serializable {
 
     @Override
     public String toString() {
-        return "Users{" 
-                + "id=" + id 
-                + ", firstName=" + firstName 
-                + ", lastName=" + lastName 
-                + ", nickName=" + nickName 
-                + ", email=" + email 
-                + ", password=" + password 
-                + ", role=" + role 
-                + ", picUser=" + picUser 
-                + '}';
+        return "Person{" + "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", nickName=" + nickName + ", picUser=" + picUser + '}';
     }
 
-    
-    
     
     
 }

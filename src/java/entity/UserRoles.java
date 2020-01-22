@@ -9,22 +9,22 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class UserRole implements Serializable {
+public class UserRoles implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @OneToOne
-    private Role role;
+    private Roles role;
     @OneToOne
-    private Users author;
+    private User2 user;
 
-    public UserRole() {
+    public UserRoles() {
     }
 
-    public UserRole(Role role, Users author) {
+    public UserRoles(Roles role, User2 user) {
         this.role = role;
-        this.author = author;
+        this.user = user;
     }
 
     public Long getId() {
@@ -35,28 +35,28 @@ public class UserRole implements Serializable {
         this.id = id;
     }
 
-    public Role getRole() {
+    public Roles getRole() {
         return role;
     }
 
-    public void setRole(Role role) {
+    public void setRole(Roles role) {
         this.role = role;
     }
 
-    public Users getAuthor() {
-        return author;
+    public User2 getUser() {
+        return user;
     }
 
-    public void setAuthor(Users author) {
-        this.author = author;
+    public void setUser(User2 user) {
+        this.user = user;
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 13 * hash + Objects.hashCode(this.id);
-        hash = 13 * hash + Objects.hashCode(this.role);
-        hash = 13 * hash + Objects.hashCode(this.author);
+        int hash = 7;
+        hash = 29 * hash + Objects.hashCode(this.id);
+        hash = 29 * hash + Objects.hashCode(this.role);
+        hash = 29 * hash + Objects.hashCode(this.user);
         return hash;
     }
 
@@ -71,14 +71,14 @@ public class UserRole implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final UserRole other = (UserRole) obj;
+        final UserRoles other = (UserRoles) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         if (!Objects.equals(this.role, other.role)) {
             return false;
         }
-        if (!Objects.equals(this.author, other.author)) {
+        if (!Objects.equals(this.user, other.user)) {
             return false;
         }
         return true;
@@ -86,11 +86,7 @@ public class UserRole implements Serializable {
 
     @Override
     public String toString() {
-        return "UserRole{" 
-                + "id=" + id 
-                + ", role=" + role 
-                + ", author=" + author.getNickName()
-                + '}';
+        return "UserRoles{" + "id=" + id + ", role=" + role + ", user=" + user + '}';
     }
 
     
