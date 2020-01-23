@@ -27,7 +27,7 @@
               <a class="nav-link" href="showListAllBooks">Книги</a>
               </li>-->
 
-              <c:if test="${'ADMIN' eq userRole || 'MANAGER' eq userRole}">
+              <c:if test="${'ADMIN' eq userRoles || 'MANAGER' eq userRole}">
                 <li class="nav-item">
                   <a class="nav-link" href="newBook">Новая книга</a>
                 </li>
@@ -35,13 +35,24 @@
                   <a class="nav-link" href="showProfit">Прибыль</a>
                 </li>
               </c:if>
-              <c:if test="${'ADMIN' eq userRole}">  
+              <c:if test="${'ADMIN' eq userRoles}">  
                 <li class="nav-item">
                   <a class="nav-link" href="showChangeUserRole">Изменить роль пользователю</a>
                 </li>
               </c:if>
+                
+              <c:if test="${'ADMIN' eq userRoles}">    
+                <li class="nav-item">
+                  <a class="nav-link"  href="showControlPanel">Панель управления</a>
+                </li>
+              </c:if>
               
             </ul>
+               <c:if test="${'ADMIN' eq userRoles}">    
+                <li class="nav-item">
+                  <a class="nav-link"  href="showControlPanel">Панель управления v2</a>
+                </li>
+              </c:if>
             
 <!--            <form action="searchBook" class="form-inline my-2 my-lg-0">-->
 <input  class="my-2 my-lg-0 mr-sm-2" type="text" id="search" name="search" placeholder="Search">
@@ -58,15 +69,13 @@
                   <a class="nav-link" href="showRegistration">Зарегистрироваться</a>
                 </li>
               </c:if>
+               
               <c:if test="${null != user}">
                 <li class="nav-item">
                   <a class="nav-link" href="logout">Выйти</a>
-                  
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link"  href="showUserProfile">Профиль</a>
-                </li>
-              </c:if>
+               </c:if>
+                
             </ul>
           </div>
         </nav>

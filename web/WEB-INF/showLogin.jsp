@@ -11,9 +11,9 @@
         <label for="password">Password</label>
         <input type="password" class="form-control" id="password" name="password" placeholder="Password">
       </div>
-      <button type="button" id="enter" class="btn btn-primary">Войти</button>
+        <button type="submit" id="enter" class="btn btn-primary">Войти</button>
     </form>
-    <h4>У вас нет логина? <a href="newReader">Зарегистрируйтесь</a></h4>
+    <h4>У вас нет логина? <a href="showRegistration">Зарегистрируйтесь</a></h4>
     <hr>
     <a href="index">Назад</a>
   </div>

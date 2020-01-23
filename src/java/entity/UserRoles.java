@@ -17,12 +17,12 @@ public class UserRoles implements Serializable {
     @OneToOne
     private Roles role;
     @OneToOne
-    private User2 user;
+    private User user;
 
     public UserRoles() {
     }
 
-    public UserRoles(Roles role, User2 user) {
+    public UserRoles(Roles role, User user) {
         this.role = role;
         this.user = user;
     }
@@ -43,11 +43,11 @@ public class UserRoles implements Serializable {
         this.role = role;
     }
 
-    public User2 getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(User2 user) {
+    public void setUser(User user) {
         this.user = user;
     }
 

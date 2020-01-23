@@ -15,8 +15,8 @@
                     <input type="text" class="form-control" id="nickname" name="nickname" aria-describedby="Nickname" placeholder="Enter nickname" value="${nickname}">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password: </label>
-                    <input type="password" class="form-control" id="password" name="password" aria-describedby="password" placeholder="Enter password" value="${password}">
+                    <label for="password1">Password: </label>
+                    <input type="password" class="form-control" id="password" name="password1" aria-describedby="password1" placeholder="Enter password" value="${password1}">
                 </div>
                 <div class="form-group">
                     <label for="password2">Repeat password: </label>
@@ -31,8 +31,8 @@
                     <input type="text" class="form-control" id="lastname" name="lastname" aria-describedby="Name" placeholder="Enter your surname" value="${lastname}">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email" aria-describedby="email" placeholder="Enter your email" value="${email}">
+                    <label for="login">Email:</label>
+                    <input type="email" class="form-control" id="email" name="login" aria-describedby="email" placeholder="Enter your email(login)" value="${login}">
                 </div>
                 
 

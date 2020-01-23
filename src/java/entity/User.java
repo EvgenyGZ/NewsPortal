@@ -12,7 +12,7 @@ import javax.persistence.OneToOne;
 import javax.validation.constraints.Size;
 
 @Entity
-public class User2 implements Serializable {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,10 +26,10 @@ public class User2 implements Serializable {
     @OneToOne
     private Person person;
 
-    public User2() {
+    public User() {
     }
 
-    public User2(String login, String password, String salts, Person person) {
+    public User(String login, String password, String salts, Person person) {
         this.login = login;
         this.password = password;
         this.salts = salts;
@@ -98,7 +98,7 @@ public class User2 implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final User2 other = (User2) obj;
+        final User other = (User) obj;
         if (!Objects.equals(this.login, other.login)) {
             return false;
         }
