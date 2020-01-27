@@ -25,7 +25,7 @@ public class RoleManager {
         try {
             context = new InitialContext();
             rolesFacade = (RolesFacade) context.lookup("java:module/RolesFacade");
-            userRolesFacade = (UserRolesFacade) context.lookup("java:module/UserRoleFacade");
+            userRolesFacade = (UserRolesFacade) context.lookup("java:module/UserRolesFacade");
             roleAdmin = rolesFacade.findRoleByName("ADMIN");
             roleAuthor = rolesFacade.findRoleByName("AUTHOR");
             roleUser = rolesFacade.findRoleByName("USER");

@@ -29,6 +29,8 @@
             <url-pattern>/WEB-INF/showLogin.jsp</url-pattern>
             <url-pattern>/index.jsp</url-pattern>
             <url-pattern>/WEB-INF/showRegistration.jsp</url-pattern>
+            <url-pattern>/WEB-INF/showControlPanel.jsp</url-pattern>
+            <url-pattern>/WEB-INF/showProfile.jsp</url-pattern>
             <include-prelude>/WEB-INF/jspf/header.jspf</include-prelude>
             <include-coda>/WEB-INF/jspf/footer.jspf</include-coda>
         </jsp-property-group>

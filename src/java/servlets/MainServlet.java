@@ -145,8 +145,9 @@ public class MainServlet extends HttpServlet {
                 roleManager = new RoleManager();
                 userRole = roleManager.getTopRole(user);
                 request.setAttribute("userRole", userRole);
-                request.setAttribute("info", "Пользователь " + user.getLogin() + " aвторизован");
                 request.setAttribute("user", user);
+                request.setAttribute("info", "Пользователь " + user.getLogin() + " aвторизован" +userRole + login);
+                
                 request.getRequestDispatcher("/index").forward(request, response);
                 break;
             case "/logout":
