@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package servlets;
 
 import javax.ejb.EJB;
@@ -64,21 +59,21 @@ public class WorkController extends HttpServlet {
         }                
         switch (path) {
             case "/showProfile":
-
+                request.setAttribute("user", user);
                 request.getRequestDispatcher("/WEB-INF/showProfile.jsp").
                         forward(request, response);
                 break;
             case "/changePerson":
                 String firstName = request.getParameter("firstName");
                 String lastName = request.getParameter("lastName");
-                String login = request.getParameter("nickName");
+                String login = request.getParameter("login");
                 String password1 = request.getParameter("password1");
                 String password2 = request.getParameter("password2");
                
                 
                 if("".equals(password1) || !password1.equals(password2)){
                     request.setAttribute("info", "Несовпадают пароли");
-                    request.getRequestDispatcher("/showUserProfile")
+                    request.getRequestDispatcher("/showProfile")
                         .forward(request, response);
                     break;
                 }

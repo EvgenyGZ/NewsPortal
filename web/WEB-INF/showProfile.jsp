@@ -21,17 +21,17 @@
       <div class="d-flex justify-content-center row profileWrap">
         <form action="changePerson" method="POST">
           <div class="form-group">
-            <label for="name">Имя читателя</label>
-            <input type="text" class="form-control"  value="${user.person.firstName}" name="name" id="name" placeholder="Имя пользователя">
+            <label for="FirstName">Имя читателя ${Person}</label>
+            <input type="text" class="form-control"  value="${user.person.firstName}" name="FirstName" id="firstName" placeholder="Имя пользователя">
           </div>
           <div class="form-group">
-            <label for="lastname">Фамилия читателя</label>
-            <input type="text" class="form-control" name="lastname" value="${user.person.lastName}" id="lastname" placeholder="Фамилия пользователя">
+            <label for="lastName">Фамилия читателя</label>
+            <input type="text" class="form-control" name="LastName" value="${user.person.lastName}" id="lastName" placeholder="Фамилия пользователя">
           </div>
           
           <div class="form-group">
             <label for="login">Логин</label>
-            <input type="text" class="form-control" id="login" name="login" aria-describedby="emailHelp" placeholder="Enter email">
+            <input type="text" class="form-control" id="login" name="login" value="${user.login}" aria-describedby="emailHelp" placeholder="Enter email">
           </div>
           <div class="form-group">
             <label for="password1">Пароль</label>
@@ -44,9 +44,16 @@
           <button type="submit" class="btn btn-primary">Внести изменения</button>
         <br>
           <br>
+          
         </form>
           
       </div> 
-         
+          <hr>
+          <div class="d-flex justify-content-center">
+             
+          <a href="showCabinet">
+            <button type="submit" class="btn btn-warning">Вернуться в Кабинет</button>
+        </a>
+              </div>
     </body>
 </html>

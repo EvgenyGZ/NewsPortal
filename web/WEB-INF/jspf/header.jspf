@@ -36,7 +36,7 @@
 
                         <c:if test="${'AUTHOR' eq userRole}">    
                             <li class="nav-item">
-                                <a class="nav-link"  href="showControlPanel">Кабинет</a>
+                                <a class="nav-link"  href="showCabinet">Кабинет</a>
                             </li>
                         </c:if>
 
@@ -82,7 +82,7 @@
                 </div>
             </nav>
         </header>
-        <div class="container-fluid">
+        <div class="container-fluid" style="min-height: calc(95vh - 80px)">
             <div class="row">
                 <p id="info" class="text-info">${info}</p>
             </div>
